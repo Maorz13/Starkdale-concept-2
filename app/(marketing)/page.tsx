@@ -17,7 +17,7 @@ export default function HomePage() {
     <>
       <HeroSection
         tag="658 Acres in Upstate New York"
-        title="Live Longer. Live Better."
+        title="A Life Worth Living Longer."
         description="Starkdale is a living environment designed to extend your lifespan and healthspan — where nature, longevity science, and community converge just 85 minutes from Manhattan."
         actions={[
           { label: "Explore Residences", href: "/residences" },
