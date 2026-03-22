@@ -34,9 +34,9 @@ export function StickyChat() {
     <div className="fixed bottom-6 left-1/2 z-50 w-full max-w-md -translate-x-1/2 px-4">
       <form
         onSubmit={handleSubmit}
-        className="flex items-end gap-3 rounded-2xl border border-white/20 bg-white/70 px-4 py-2.5 shadow-2xl backdrop-blur-md"
+        className="flex items-center gap-3 rounded-2xl border border-white/20 bg-white/70 px-4 py-2.5 shadow-2xl backdrop-blur-md"
       >
-        <Sparkles className="mb-0.5 size-5 shrink-0 text-muted-foreground" />
+        <Sparkles className="size-5 shrink-0 text-muted-foreground" />
         <textarea
           ref={textareaRef}
           rows={1}
@@ -51,7 +51,7 @@ export function StickyChat() {
         />
         <button
           type="submit"
-          className="mb-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground transition-colors hover:bg-foreground hover:text-background disabled:opacity-40"
+          className="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground transition-colors hover:bg-foreground hover:text-background disabled:opacity-40"
           disabled={!value.trim()}
         >
           <ArrowUp className="size-4" />
