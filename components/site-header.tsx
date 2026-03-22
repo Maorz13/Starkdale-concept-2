@@ -25,41 +25,39 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { cn } from "@/lib/utils"
 
 const NAV_ITEMS = [
+  {
+    title: "Explore",
+    href: "/explore",
+    children: [
+      { title: "Explore Starkdale", href: "/explore" },
+      { title: "Live Layers", href: "/life/live-layers" },
+    ],
+  },
   {
     title: "Residences",
     href: "/residences",
     children: [
       { title: "All Residences", href: "/residences" },
-      { title: "Multifamily Residences", href: "/residences/multifamily" },
+      { title: "Multifamily Residences (Apartments)", href: "/residences/multifamily" },
       { title: "Custom Single-Family Homes", href: "/residences/single-family" },
       { title: "Neighborhoods", href: "/residences/neighborhoods" },
+      { title: "Compare Properties", href: "/residences/compare" },
+      { title: "Financing & Mortgage Tools", href: "/residences/financing" },
+      { title: "eCommerce Checkout", href: "/residences/checkout" },
     ],
   },
   {
-    title: "Wellness & Longevity",
+    title: "Longevity & Lifestyle",
     href: "/wellness",
     children: [
       { title: "ROSEBAR Longevity Center", href: "/wellness/rosebar" },
-      { title: "The Spa", href: "/wellness/spa" },
-    ],
-  },
-  {
-    title: "Live Layers",
-    href: "/life/live-layers",
-    children: [
-      { title: "The Great Outdoors", href: "/life/live-layers/outdoors" },
-      { title: "Fitness", href: "/life/live-layers/fitness" },
-      { title: "ROSEBAR", href: "/wellness/rosebar" },
-      { title: "Social", href: "/life/live-layers/social" },
-      { title: "Spirituality", href: "/life/live-layers/spirituality" },
-      { title: "Music", href: "/life/live-layers/music" },
-      { title: "Culinary", href: "/life/live-layers/culinary" },
-      { title: "Charity", href: "/life/live-layers/charity" },
-      { title: "Arts", href: "/life/live-layers/arts" },
-      { title: "Design & Sustainability", href: "/life/live-layers/design" },
+      { title: "The Spa", href: "/wellness" },
+      { title: "The Square", href: "/life/the-square" },
+      { title: "Play Village", href: "/life/play-village" },
+      { title: "Gathering Venues", href: "/life/gathering-venues" },
+      { title: "Community & Technology", href: "/community/connectivity" },
     ],
   },
   {
@@ -68,16 +66,6 @@ const NAV_ITEMS = [
     children: [
       { title: "The Resort", href: "/resort" },
       { title: "Accommodation", href: "/resort/lodging" },
-    ],
-  },
-  {
-    title: "Community",
-    href: "/community",
-    children: [
-      { title: "The Square", href: "/community/the-square" },
-      { title: "Play Village", href: "/community/play-village" },
-      { title: "Gathering Venues", href: "/community/gathering-venues" },
-      { title: "Community & Technology", href: "/community/connectivity" },
     ],
   },
   {
@@ -144,10 +132,7 @@ export function SiteHeader() {
         </NavigationMenu>
 
         <div className="flex items-center gap-2">
-          <Button asChild variant="outline" size="sm" className="hidden sm:inline-flex">
-            <Link href="/explore">Explore Starkdale</Link>
-          </Button>
-          <Button asChild size="sm" className="hidden sm:inline-flex">
+          <Button asChild size="sm" className="hidden lg:inline-flex">
             <Link href="/contact">Contact Us</Link>
           </Button>
 
@@ -201,14 +186,9 @@ export function SiteHeader() {
                   ))}
                 </Accordion>
                 <div className="flex flex-col gap-2 pt-2 border-t">
-                  <Button asChild variant="outline" size="sm">
-                    <Link href="/explore" onClick={() => setMobileOpen(false)}>
-                      Explore Starkdale
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" size="sm">
-                    <Link href="/contact" onClick={() => setMobileOpen(false)}>
-                      Contact Us
+                  <Button asChild size="sm">
+                    <Link href="/profile" onClick={() => setMobileOpen(false)}>
+                      My Starkdale
                     </Link>
                   </Button>
                 </div>
