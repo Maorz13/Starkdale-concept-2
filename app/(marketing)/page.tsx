@@ -23,7 +23,7 @@ export default function HomePage() {
           { label: "Explore Residences", href: "/residences" },
           { label: "Contact Us", href: "/contact", variant: "outline" },
         ]}
-        imageSrc="/assets/hero-starkdale.png"
+        imageSrc="/assets/hero-2.png"
         imagePlaceholder="Starkdale Aerial View"
       />
 
