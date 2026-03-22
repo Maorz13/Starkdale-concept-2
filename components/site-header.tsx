@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu } from "lucide-react"
+import { Menu, UserCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
@@ -43,9 +43,7 @@ const NAV_ITEMS = [
       { title: "Multifamily Residences (Apartments)", href: "/residences/multifamily" },
       { title: "Custom Single-Family Homes", href: "/residences/single-family" },
       { title: "Neighborhoods", href: "/residences/neighborhoods" },
-      { title: "Compare Properties", href: "/residences/compare" },
       { title: "Financing & Mortgage Tools", href: "/residences/financing" },
-      { title: "eCommerce Checkout", href: "/residences/checkout" },
     ],
   },
   {
@@ -71,12 +69,6 @@ const NAV_ITEMS = [
   {
     title: "Our Vision",
     href: "/vision",
-    noDropdown: true,
-    children: [],
-  },
-  {
-    title: "My Starkdale",
-    href: "/profile",
     noDropdown: true,
     children: [],
   },
@@ -132,6 +124,12 @@ export function SiteHeader() {
         </NavigationMenu>
 
         <div className="flex items-center gap-2">
+          <Button asChild variant="outline" size="sm" className="hidden lg:inline-flex gap-1.5">
+            <Link href="/profile">
+              <UserCircle className="size-4" />
+              My Starkdale
+            </Link>
+          </Button>
           <Button asChild size="sm" className="hidden lg:inline-flex">
             <Link href="/contact">Contact Us</Link>
           </Button>
@@ -186,9 +184,15 @@ export function SiteHeader() {
                   ))}
                 </Accordion>
                 <div className="flex flex-col gap-2 pt-2 border-t">
-                  <Button asChild size="sm">
+                  <Button asChild variant="outline" size="sm" className="gap-1.5">
                     <Link href="/profile" onClick={() => setMobileOpen(false)}>
+                      <UserCircle className="size-4" />
                       My Starkdale
+                    </Link>
+                  </Button>
+                  <Button asChild size="sm">
+                    <Link href="/contact" onClick={() => setMobileOpen(false)}>
+                      Contact Us
                     </Link>
                   </Button>
                 </div>
